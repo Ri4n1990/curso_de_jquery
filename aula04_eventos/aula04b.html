@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de jquery</title>
+    <script src="../jquery.js"></script>
+    <style>
+        #bloco{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+    
+    
+</head>
+<body>
+
+    <div id="bloco"></div>
+    <p id="texto"></p>
+
+    
+    <script>
+        
+        $('#bloco').click(()=>{
+
+            $('#texto').text("Clicado no quadrado")
+
+        })
+
+        $('#bloco').mouseenter(()=>{
+
+            $('#texto').text("mouse entrou no quadrado")
+
+        })
+
+
+        $('#bloco').mouseleave(()=>{
+
+            $('#texto').text("mouse saiu do quadrado")
+
+        })
+
+
+        $('#bloco').mousemove(()=>{
+
+            $('#texto').text("mouse mexendo sobre o quadrado")
+
+        })
+
+        
+       
+            
+
+    
+
+        
+
+    </script>
+    
+</body>
+</html> 

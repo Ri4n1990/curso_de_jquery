@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <input type="text" id="inp">
+    <p id="msg"></p>
+
+    <script>
+    //    $(window).on("beforeunload", function (e) {
+            
+    //         e.preventDefault();
+    //         $("#msg").text('vai fechar mesmo?')
+            
+            
+    //     })
+        
+        // $(window).resize(()=>{
+        //     $("#msg").text(`largura: ${$(window).width()} altura: ${$(window).height()}`)
+        // })
+    
+        $("#inp").focus(()=>{
+            $("#inp").val('oi!')
+        })
+
+        $("#inp").blur(()=>{
+            $("#inp").val('tchau!')
+            $("#msg").text("")
+        })
+
+        $("#inp").select(()=>{
+            $("#msg").text('foi selecionado')
+        })
+
+        
+
+
+    </script>
+    
+
+    
+    
+</body>
+</html>
