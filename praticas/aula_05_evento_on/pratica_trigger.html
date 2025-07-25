@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>trigger</title>
+
+    <style>
+
+        div{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        p{
+            text-align: center;
+            font-size: 1.2em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div>
+        <input type="text" name="texto1" id="texto1">
+        <input type="text" name="texto2" id="texto2">
+    </div>
+    <p id="texto">oioi</p>
+
+    <script>
+
+        $("#texto1").on('input',()=>{
+            console.log('oi')
+            $("#texto").text($("#texto1").val())
+
+        })
+
+        $("#texto2").on('input', ()=>{
+
+            $("#texto1").val($("#texto2").val())
+            $("#texto1").trigger('input')
+        })
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula05</title>
+    <script src="../jquery.js"></script>
+    <style>
+
+        div.container{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-around;
+            
+
+        }
+        #bloco{
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+
+        #bloco2{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(228, 13, 13);
+        }
+
+    </style>
+    
+    
+</head>
+<body>
+
+    <div class="container">
+        <div id="bloco"></div>
+        <div id="bloco2"></div>
+    </div>
+    <p id="texto"></p>
+
+    
+    <script>
+        
+        $('#bloco').on({
+            click : ()=>{ $('#texto').text("Clique no quadrado")},
+            mouseenter : ()=>{$('#texto').text("mouse entrou no quadrado")},
+            mouseleave : ()=>{$('#texto').text("mouse saiu do quadrado")},
+            dblclick : ()=>{$('#texto').text("Duplo Clique no quadrado")}
+        })
+        
+
+        $("#bloco2").click(()=>{
+            $("#bloco").trigger('click')
+        })
+
+        
+      
+
+        
+       
+            
+
+    
+
+        
+
+    </script>
+    
+</body>
+</html> 
