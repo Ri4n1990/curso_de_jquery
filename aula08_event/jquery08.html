@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+    <title>aula08</title>
+</head>
+<body>
+
+    <p id="texto">CFB cursos</p>
+
+    <div id="texto2">Curso de jquery</div>
+    
+    <br>
+    <p id="resultado"></p>
+
+    <script>
+        $(document).click((event)=>{
+            $('#resultado').text(`objeto clicado ${event.target.id}`)
+
+            if(event.target.id =='resultado' ){
+                alert('resultado Clicado')
+
+            }
+        })
+
+
+
+
+
+
+
+        // $('#texto').on('click',(event)=>{
+        //     // $('#resultado').text(`X: ${event.pageX} Y: ${event.pageY}`)
+
+        //     $('#resultado').text(`Objeto que foi clicado ${event.target.nodeName}`)
+
+
+
+        // })
+    </script>
+</body>
+</html>

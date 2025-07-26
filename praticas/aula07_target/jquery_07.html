@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>target</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+
+    <button id="btn">Enviar</button>
+    <p id= 'texto'>texto</p>
+
+
+    <script>
+
+        $('#btn').on('click',(event)=>{
+            $('#texto').text(`Elemento: ${event.target.tagName}  \n Evento: ${event.type} Conteúdo: ${event.target.innerHTML}`)
+        })
+
+        
+        
+
+    </script>
+    
+</body>
+</html>
