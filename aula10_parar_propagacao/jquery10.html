@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+    <title>Curso de jquery</title>
+
+    <style>
+
+        div{
+            border: 1px solid #f00;
+            padding: 10px;
+        }
+        p{
+            border: 1px solid rgb(238, 255, 0);
+            padding: 10px;
+
+        }
+
+        span{
+            border: 1px solid rgb(0, 68, 255);
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <p>
+
+            CFB CURSOS <br> <br> <br>
+            <span>Curso de jquey</span>
+        </p>
+    </div>
+
+
+    <script>
+
+        $('div').click(()=>{
+            event.stopPropagation()
+            alert('Evento Disparado no div')
+        })
+        $('p').click(()=>{
+            event.stopPropagation()
+            alert('Evento Disparado no p')
+        })
+
+        $('span').click(()=>{
+            event.stopPropagation()
+            alert('Evento Disparado no span')
+        })
+
+
+
+    </script>
+
+    
+</body>
+</html>

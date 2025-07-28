@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>stopPropagation</title>
+
+    <style>
+
+        div{
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="teste">
+        div
+        <p id="op">oioi</p>
+        <div>
+            <button id="env">Enviar</button>
+        </div>
+    </div>
+    <script>
+
+        $('#teste').click(()=>{
+            alert('div clicada')
+        })
+
+        $('#env').click(()=>{
+            alert('Button clicado')
+        })
+
+        $('#op').click(()=>{
+            alert('oioi clicado')
+        })
+
+    </script>
+    
+</body>
+</html>
