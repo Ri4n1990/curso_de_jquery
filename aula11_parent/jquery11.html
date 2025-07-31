@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de jquery</title>
+    <script src="../jquery.js"></script>
+</head>
+<body>
+
+    <div>
+        <ul>
+            <li>
+                <h3>CFB Cursos</h3>
+                <span>Curso de jquery</span>
+                <p>Seletores Parent</p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+
+        $('p').parentsUntil('body').css({'border' : '2px solid #f00'})
+
+        // $('li').parent().css({'border' : '1px solid #00f'})
+
+        // $('ul').parent().css({'border' : '1 px solid #0f0' })
+
+        // $('div').parent().css({'border': '1px solid #ff0 '})
+
+        // $('body').parent().css({'border' : '1px solid #f0f'})
+
+
+
+    </script>
+    
+</body>
+</html>

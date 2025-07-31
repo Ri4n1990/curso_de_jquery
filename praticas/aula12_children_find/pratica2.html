@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Escrita</title>
+</head>
+<body>
+
+
+
+        <button>Selecionar Texto</button>
+        <input type="text" name="texto" id="texto">
+
+    <script>
+
+        $('button').on('click',()=>{
+            $('input').val().length != 0 ? $('input').css({'background-color' : 'blue'}) : alert('Não há texto no campo input!')
+        })
+        
+
+
+        
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de jquery</title>
+    <script src="../jquery.js"></script>
+</head>
+<body>
+
+    <div>
+        <ul>
+           <li>CFB cursos</li>
+           <li>Curso de jquery</li>
+           <li>Seletores parent</li>
+        </ul>
+
+        <ul>
+            <li>CFB cursos</li>
+           <li>Curso de jquery</li>
+           <li>Seletores parent</li>
+        </ul>
+    </div>
+
+    <script>
+
+
+        $('div').find('*').css({'border': '1px solid red'})
+
+        // $('div').children().css({'border': '1px solid red'})
+    </script>
+
+    
+</body>
+</html>

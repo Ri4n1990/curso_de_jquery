@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Children find</title>
+
+</head>
+
+<body>
+
+    <button id="sel">Selecionar</button>
+
+    <section>
+        <button>Enviar</button>
+        <button>Cancelar</button>
+        <p>...</p>
+    </section>
+    
+
+
+    <script>
+
+        // $('section').children().click(()=>{
+        //     $('p').text('Formulário enviado!')
+        // })
+
+        $('section').children().click(()=>{
+            $('p').text('Formulário enviado!')
+        })
+
+        $('section').find('button:last').click(()=>{
+            $('p').text('Envio cancelado!')
+        })
+        $('#sel').click(()=>{
+            $('section').find('*').css({'background-color':'blue'})
+        })
+
+        
+        
+    </script>
+    
+</body>
+</html>
