@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+    <title>Siblings</title>
+</head>
+<body>
+
+    
+        <div>
+            <span>
+                <ul>
+                    <h3>Cfb cursos</h3>
+                    <p>Curso de jquery</p>
+                    <h2>Seletores parent</h2>
+                    <p>siblings</p>
+                </ul>
+            </span>
+        
+        </div>
+    
+    
+
+    <script>
+
+
+        $('h2').siblings().css({'border': '1px solid red'})
+
+        // prev , prevall , prevuntil IRMÃOS ANTES
+        // next , nextall , nextuntil  IRMÃOS DEPOIS
+
+
+    </script>
+</body>
+</html>
