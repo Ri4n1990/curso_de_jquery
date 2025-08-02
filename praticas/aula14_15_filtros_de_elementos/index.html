@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        section{
+            border: 2px solid lightgray;
+            border-radius: 5px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            width: 15vw;
+            margin: auto;
+            margin-top: 7%;
+
+        }
+
+        section>div{
+            font-size: 1.3em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid black;
+            border-radius: 2px;
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+            
+
+        }
+
+        menu{
+            margin: auto;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            border: 2px solid lightblue;
+            border-radius: 3px;
+            width: 30vw;
+            padding: 15px;
+            margin-top: 10px;
+
+        }
+
+        menu>button{
+            font-size: 1.4em;
+            text-align: center;
+            border: 2px solid lightblue;
+            border-radius: 4px;
+            background-color: lightcoral;
+            box-sizing: border-box;
+            padding: 10px;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        button:hover{
+            background-color: lightblue;
+            
+        }
+
+        .cor{
+            background-color: lightblue;
+        }
+
+
+    </style>
+    <title>Filtros</title>
+</head>
+
+<body>
+
+    <section>
+
+        <div>Primeiro</div>
+        <div class="cor">Segundo</div>
+        <div>Terceiro</div>
+        <div>Quarto</div>
+        <div class="cor">Quinto</div>
+        <div>Último</div>
+
+
+    </section>
+
+
+    <menu>
+        <button>Primeiro</button>
+        <button>Último</button>
+        <button>Azul</button>
+        <button>sem cor </button>
+    </menu>
+
+    <script>
+
+        $('button').first().click(()=>{
+            $('div').first().css({'border-color': 'red'})
+        })
+
+        $('button').eq(1).on('click',()=>{
+            $('div').last().css({'border-color':'red'})
+        })
+
+        $('button').eq(2).on('click', ()=>{
+            $('div').filter('.cor').css({'border-color': 'red'})
+        })
+
+        $('button').last().click(()=>{
+            $('div').not('.cor').css({'border-color' : 'red'})
+        })
+        
+
+
+
+    </script>
+    
+</body>
+</html>

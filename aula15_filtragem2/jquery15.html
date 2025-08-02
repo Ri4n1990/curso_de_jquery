@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        p{
+            background-color: #ffa;
+        }
+
+        h3{
+            background-color: #afa;
+        }
+
+        .borda{
+            border: 2px solid #f00;
+        }
+
+    </style>
+
+
+    <script src="../jquery.js"></script>
+    <title>Filtragem</title>
+</head>
+<body>
+    <p class="borda">CFB cursos</p>
+    <h3>CFB Cursos</h3>
+
+    <p>Curso de canvas</p>
+    <h3>Curso de canvas</h3>
+
+    <p>youtube.com/cfbcursos</p>
+    <h3>youtube.com/cfbcursos</h3>
+
+    <p>www.cfbcursos.com.br</p>
+    <h3>www.cfbcursos.com.br</h3>
+
+    <p class="borda" >Filtrando elementos</p>
+    <h3>Filtrando elementos</h3>
+    
+   
+    <script>
+
+        $('p').filter('.borda').css({'color': 'red'})
+        $('p').not('.borda').css({'color': '#00f'})
+        
+
+    </script>
+    
+</body>
+</html>
