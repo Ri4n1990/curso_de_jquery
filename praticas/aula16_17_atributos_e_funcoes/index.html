@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        .estilo{
+            background-color: aquamarine;
+        }
+    </style>
+
+    <title>Pratica 16 - 17</title>
+</head>
+<body>
+
+    <main>
+        <section>
+            <h1 id="lolo">Título</h1>
+            <h1>Títu<h1>
+            <p>descrição e tal tal tal</p>
+            <input type="text" id="nome" placeholder="Magrão">
+        </section>
+    </main>
+
+
+
+    <script>
+
+        // $('h1').click(()=>{
+        //     alert(`${$(event.target).text()}`)
+        // })
+
+        $('main').find('0').click(()=>{
+            console.log('oioi')
+
+        })
+
+        $('#nome').on('click', ()=>{
+            alert(`Valor : ${$(event.target).val()}`)
+        })
+
+        $('section').click(()=>{
+            alert('minha Estrutura: ' + $(event.target).html())
+        })
+
+        console.log($('h1').first().attr('id'))
+
+        $('p').first().attr('class','estilo')
+
+        
+
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+    <title>Text Val Html</title>
+</head>
+
+<body>
+    
+    <div id="caixa">
+        <p>CFB Cursos</p>
+        <p>Curso de jquery</p>
+    </div>
+
+    <h2>Curso de jquery</h2>
+    <input type="text" name="nome" id="nome">
+
+
+
+
+
+    <script>
+
+        $('#caixa').click(
+            function(){
+            alert('Texto:'+ $(this).html())
+
+        })
+
+        $('#nome').click(
+
+            function(){
+                alert(`Texto: ${$(this).val()}`)
+            }
+
+        )
+
+
+
+
+    </script>
+
+
+</body>
+</html>
