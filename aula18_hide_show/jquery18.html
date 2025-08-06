@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+    <title>Atributos</title>
+
+    <style>
+
+        .caixa{
+            border : 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    
+    <div id="caixa" class="caixa" style="border: 1px solid black; width:200px; height:200px">
+        <h3>CFB Cursos</h3>
+        <p>Curso de jquery</p>
+    </div>
+
+    <button id="btn_mostrar">Mostrar</button>
+    <button id="btn_ocultar">Ocultar</button>
+
+    
+
+
+
+
+
+    <script>
+
+        $('#btn_mostrar').click(
+            function(){
+               $('#caixa').show()
+            }
+        )
+
+        $('#btn_ocultar').click(
+            function(){
+               $('#caixa').hide()
+            }
+        )
+
+
+    </script>
+
+
+</body>
+</html>

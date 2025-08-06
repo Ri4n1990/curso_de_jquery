@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Visualização de elementos</title>
+
+    <style>
+
+        main{
+            border: 2px solid black;
+            border-radius: 5px;
+            width: 40vw;
+            height: 300px;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        main>div{
+            border: 2px solid lightsalmon;
+            background-color: lightblue;
+            border-radius: 5px;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        section{
+            margin-top: 20px;
+            text-align: center;
+            
+        }
+
+        section>button{
+            padding: 10px;
+            border: 2px solid lightgreen;
+            background-color: lightcoral;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        .selecionado{
+            background-color: lightcoral;
+            border-color: #f90000;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <main>
+
+        <div>Elemento1</div>
+        <div>Elemento2</div>
+        <div>Elemento3</div>
+        <div>Elemento4</div>
+        <div>Elemento5</div>
+
+    </main>
+
+    <section>
+        <button>Ocultar</button>
+        <button>Mostrar ocultos</button>
+    </section>
+
+    <script>
+
+        $('main').find('*').click( function(){
+            $(this).toggleClass('selecionado')
+        })
+
+        $('section').find('button:first').click(function(){
+
+            if($('.escondido').length == 5){
+                alert('A caixa esta vazia!')
+            
+
+            }else if($('.selecionado').length == 0){
+                alert('Selecione pelo menos um elemento!')
+
+
+            }else{
+                $('.selecionado').hide()
+                $('.selecionado').addClass('escondido')
+                $('.selecionado').removeClass('selecionado')
+                
+            }
+             
+        })
+
+        $('section').find('button:last').click(()=>{
+
+            if($('.escondido').length > 0){
+                $('.escondido').show()
+                $('.escondido').removeClass('escondido')
+
+            }else{
+                alert('Nenhum elemento escondido!')
+            }
+            
+        })
+
+    </script>
+
+
+
+
+    
+</body>
+
+
+
+</html>
