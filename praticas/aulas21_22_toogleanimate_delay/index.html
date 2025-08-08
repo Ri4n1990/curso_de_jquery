@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>toogle+animate e delay</title>
+
+    <style>
+
+        main{
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 50vw;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        main>div{
+
+            background-color: lightcoral;
+            padding: 20px;
+            border: 2px solid lightblue;
+            flex: 0 0 10%;
+            color: #fff;
+            font-size: 1.1em;
+            text-align: center;
+            border-radius: 5px;
+            
+
+
+        }
+
+
+        button{
+            background-color: lightblue;
+            border: 1px solid rgba(0, 0, 0, 0.601);
+            padding: 20px;
+            text-align: center;
+            border-radius: 2px;
+            
+
+        }
+
+        section{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+
+        <div>Elemento1</div>
+        <div>Elemento2</div>
+        <div>Elemento3</div>
+        <div>Elemento4</div>
+        <div>Elemento5</div>
+
+
+    </main>
+
+    <section>
+        <button>Diminuir</button>
+        <button>Aumentar</button>
+        <button>Remover</button>
+    </section>
+
+
+    <script>
+
+        $('div').click(()=>{
+            $(event.target).toggleClass('selecionado')
+        })
+
+        $('button').first().click(()=>{
+            $('main').first().animate({width:'10vw'},{duration:2000})
+        })
+
+        $('button').last().prev().click(()=>{
+            $('main').last().animate({width:'50vw'}, {duration:2000})
+        })
+
+        $('button').last().click(()=>{
+
+            $('div').animate({width:'toggle'})
+
+        })
+
+
+
+    </script>
+
+
+
+
+
+    
+    
+</body>
+</html>
