@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Animate</title>
+</head>
+
+<style>
+    div{
+        background-color: lightblue;
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50px;
+        left: -15%;
+        
+        
+        
+    }
+
+    
+
+
+</style>
+
+<body>
+
+
+    <div></div>
+
+    <button>Movimentar</button>
+    <button id="volta">Voltar</button>
+
+
+    <script>
+
+
+        $('button').last().hide()
+
+
+
+        $('button').first().on('click',()=>{
+            
+            $('div').first().animate({left:'0px'},{duration:500,start:()=>{
+                $('button').first().hide()
+
+            } ,complete:()=>{
+                
+                $('button').last().show()
+
+
+            }}).animate({height:'500px'},{duration:500})
+        })
+
+
+        $('button').last().on('click',()=>{
+            $('div').first().animate({height:'200px'}).animate({left:'-15%'},{duration:500, start:(()=>{
+                $('button').last().hide()
+            }),complete:()=>{
+                
+                $('button').first().show()
+
+            }})
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Animate</title>
+
+    <style>
+
+        .caixa{
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #aaa;
+            position: absolute;
+            left: 0px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="caixa" class="caixa">
+        <h3>CFB Cursos</h3>
+        <p>Curso de jquery</p>
+    </div>
+
+    <button id="btn_aumentar">Aumentar</button>
+    <button id="btn_diminuir">Diminuir</button>
+    <button id="btn_esquerda">Esquerda</button>
+    <button id="btn_direita">Direita</button>
+
+    <script>
+
+        $('#btn_aumentar').click(function(){
+
+            $('#caixa').animate({width:"500px",height:"500px"},{duration:3000})
+        })
+
+        $('#btn_diminuir').click(function(){
+
+            $('#caixa').animate({width:"200px"}).animate({height:"200px"},{duration:200})
+        })
+
+        $('#btn_direita').click(function(){
+
+            $('#caixa').animate({left:"500px"},{duration:1000, complete:()=>{alert('movimentação terminou')}})
+        })
+
+        $('#btn_esquerda').click(function(){
+
+            $('#caixa').animate({left:"0px"},{duration:1000} )
+        })
+        
+        
+
+
+
+    </script>
+    
+</body>
+</html>
