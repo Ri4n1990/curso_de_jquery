@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Fadein Fadeout</title>
+
+    <style>
+
+        .caixa{
+            border : 1px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: #008;
+            color: #fff;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            padding: 10px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    
+    <div id="caixa" class="caixa">
+        <h3>CFB Cursos</h3>
+        <p>Curso de jquery</p>
+    </div>
+
+    <button id="btn_mostrar">Mostrar</button>
+    <button id="btn_ocultar">Ocultar</button>
+    <button id="btn_ocultarmostrar">Ocultar/mostrar</button>
+
+    
+
+
+
+
+
+    <script>
+
+        $('#btn_mostrar').click(
+            function(){
+               $('#caixa').fadeIn(3000)
+            }
+        )
+
+        $('#btn_ocultar').click(
+            function(){
+                $('#caixa').fadeOut(3000)
+               
+            }
+        )
+
+        $('#btn_ocultarmostrar').click(
+            function(){
+                $('#caixa').fadeOut(5000).fadeIn(1000)
+               
+            }
+        )
+
+
+    </script>
+
+
+</body>
+</html>
