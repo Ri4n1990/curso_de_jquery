@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>fadetoogle</title>
+
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            border: none;
+
+        }
+
+        .menu{
+            background-color: #ddd;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .itemMenu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #128;
+            color: #fff;
+            text-transform: capitalize;
+            cursor: pointer;
+
+        }
+
+        .submenu{
+            display: none;
+            border: 1px solid #000;
+            width: 100%;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .itemsubMenu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #128;
+            color: #fff;
+            text-transform: capitalize;
+            cursor: pointer;
+            box-sizing: border-box;
+
+        }
+
+
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <div id="menu" class="menu">
+        <div class="itemMenu">home</div>
+        <div id="meujquery" class="itemMenu">jquery</div>
+        <div id="meucanvas" class="itemMenu">canvas</div>
+        <div id="meupython" class="itemMenu">python</div>
+        <div  id="meuarduino" class="itemMenu">Arduino</div>
+    </div>
+
+    <div id="submenu_jquery" class="submenu">
+        <div class="itemsubMenu">Aulas jquery</div>
+        <div class="itemsubMenu">Material jquery</div>
+    </div>
+
+    <div id="submenu_canvas" class="submenu">
+        <div class="itemsubMenu">Aulas canvas</div>
+        <div class="itemsubMenu">Material canvas</div>
+    </div>
+
+    <div id="submenu_python" class="submenu">
+        <div class="itemsubMenu">Aulas python</div>
+        <div class="itemsubMenu">Material python</div>
+    </div>
+
+    <div id="submenu_arduino" class="submenu">
+        <div class="itemsubMenu">Aulas arduino</div>
+        <div class="itemsubMenu">Material arduino</div>
+    </div>
+
+
+    <script>
+
+        $('.itemMenu').mouseenter(function(){
+            $(this).fadeTo(100,0.2)
+        })
+
+        $('.itemMenu').mouseleave(function(){
+            $(this).fadeTo(100,1)
+        })
+
+        $('#meujquery').click(function(){
+            $('#submenu_jquery').fadeToggle()
+            $('#submenu_jquery').css({display:"flex"})
+        })
+
+        $('#meucanvas').click(function(){
+            $('#submenu_canvas').fadeToggle()
+            $('#submenu_canvas').css({display:"flex"})
+        })
+
+        $('#meupython').click(function(){
+            $('#submenu_python').fadeToggle()
+            $('#submenu_python').css({display:"flex"})
+        })
+
+        $('#meuarduino').click(function(){
+            $('#submenu_arduino').fadeToggle()
+            $('#submenu_arduino').css({display:"flex"})
+        })
+    </script>
+
+    
+</body>
+</html>
