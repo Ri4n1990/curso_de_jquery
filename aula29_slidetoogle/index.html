@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>slidetoogle</title>
+
+    <style>
+
+
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+
+
+        .menu{
+            display: flex;
+            width: 100%;
+            flex-flow: column nowrap;
+        }
+
+        #menus{
+            background-color: #888;
+            display: flex;
+            width: 100%;
+        }
+
+
+        .btnmenu{
+            margin: 5px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+
+        #controle{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #888;
+            padding: 5px;
+            border-radius:  0 0 10px 10px;
+            margin-left: 10px;
+            margin-right: auto;
+
+        }
+
+        #controle button{
+            margin: 5px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="menu" class="menu">
+        <div id="menus">
+
+            <button class="btnmenu">Home</button>
+            <button class="btnmenu">Cursos</button>
+            <button class="btnmenu">Material</button>
+            <button class="btnmenu">Contatos</button>
+            <button class="btnmenu">Sobre</button>
+        </div>
+
+        <div id="controle">
+            <button id="btnmenu">Menu</button>
+            
+        </div>
+
+        <p id="msg">Menu exibido</p>
+
+        
+    </div>
+
+
+
+    <script>
+
+        $('#btnmenu').click(function(){
+            $('#menus').slideToggle(100,()=>{
+
+                $('#menus').is(':visible') ? $('#msg').text('menu Exibido') : $('#msg').text('menu Oculto')
+            })
+
+        })
+
+        
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

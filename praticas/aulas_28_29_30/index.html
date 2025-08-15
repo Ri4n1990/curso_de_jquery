@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        p{
+            position: relative;
+        }
+
+        p::after{
+            position: absolute;
+            content: " o";
+            width: 10%;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: black;
+            
+            
+        }
+    </style>
+
+    <title>slides e stop</title>
+</head>
+
+<body>
+
+    <p>inicio</p>
+
+    <button>Ação</button>
+
+
+
+
+
+
+
+
+
+
+
+    <script> 
+
+        $('button').click(()=>{
+            $('div').first().slideToggle()
+
+        })
+
+    </script>
+    
+</body>
+</html>
