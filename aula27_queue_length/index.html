@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>queue.length</title>
+
+    <style>
+
+
+        .caixa{
+            background-color: #f00;
+            width: 100px;
+            height: 100px;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <p>
+        <button id="btnaumentar">Aumentar</button>
+        <button id="btndiminuir">Diminuir</button>
+    </p>
+
+    <p><button id="btnfinalizar">Finalizar</button></p>
+
+    <p id="info"></p>
+
+    <div id="caixa" class="caixa"></div>
+
+    <script>
+        const cx = $('#caixa')
+
+        $('#btnaumentar').click(()=>{
+            $('#caixa').animate({width: 800},{duration:5000 , complete:()=>{$('#info').text(cx.queue().length)}})
+            $('#info').text(cx.queue().length)
+        })
+
+        $('#btndiminuir').click(()=>{
+            $('#caixa').animate({width: 100},{duration:5000 , complete:()=>{$('#info').text(cx.queue().length)}})
+            $('#info').text(cx.queue().length)
+        })
+
+        $('#btnfinalizar').click(()=>{
+            $('#caixa').finish()
+
+        })
+
+    </script>
+
+    
+</body>
+</html>

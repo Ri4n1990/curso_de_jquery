@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Finish</title>
+
+    <style>
+
+
+        .caixa{
+            background-color: #f00;
+            width: 100px;
+            height: 100px;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+    <p>
+        <button id="btnaumentar">Aumentar</button>
+        <button id="btndiminuir">Diminuir</button>
+    </p>
+
+    <p><button id="btnfinalizar">Finalizar</button></p>
+
+    <div id="caixa" class="caixa"></div>
+
+    <script>
+
+        $('#btnaumentar').click(()=>{
+            $('#caixa').animate({width: 800},5000)
+        })
+
+        $('#btndiminuir').click(()=>{
+            $('#caixa').animate({width: 100},5000)
+        })
+
+        $('#btnfinalizar').click(()=>{
+            $('#caixa').finish()
+
+        })
+
+    </script>
+
+    
+</body>
+</html>
