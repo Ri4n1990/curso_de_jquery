@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>prepend prependto</title>
+
+    <style>
+
+        .caixa{
+            background-color:  #bbb;
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .subcaixa{
+           
+            width: 100px;
+            height: 100px;
+            margin: 0px 0px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 'xx -large';
+
+
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <p>
+
+        <button id="btnadicionar">Adicionar</button>
+        <button id="btnadicionar5">Adicionar x5</button>
+
+
+
+
+    </p>
+
+    <div class="caixa" id="caixa"></div>
+
+    <script>
+        let r,g,b
+        
+        let num = 0
+        $('#btnadicionar').click(()=>{
+            r = Math.floor(Math.random()*225)
+            g = Math.floor(Math.random()*225)
+            b = Math.floor(Math.random()*225)
+            $('#caixa').preprend("<div class = 'subcaixa' style = 'background-color:rgb("+r+","+g+","+b+")'>"+num+"</div>")
+            num++
+        })
+
+        $('#btnadicionar5').click(()=>{
+            for(let n = 0 ; n<5 ; n++ ){
+
+                r = Math.floor(Math.random()*225)
+                g = Math.floor(Math.random()*225)
+                b = Math.floor(Math.random()*225)
+                $("<div class = 'subcaixa' style = 'background-color:rgb("+r+","+g+","+b+")'></div>").preprendTo($('.caixa')).text(num)
+
+                num++
+
+            }
+            
+        })
+    </script>
+
+    
+</body>
+
+</html>

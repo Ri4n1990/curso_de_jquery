@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Adicionando elementos</title>
+    <style>
+        main{
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: auto;
+            width: 50vw;
+            margin-top: 20px;
+            display: flex;
+            flex-flow : row wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .estilo{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: xx-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        button{
+            position: fixed;
+            top: 5px;
+        
+        }
+
+        button:nth-of-type(1){
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main></main>
+
+    <button>Add primeiro</button>
+    <button>Add final</button>
+
+
+
+    <script>
+
+        $('button').first().click(()=>{
+            
+            let novo = document.createElement('div')
+            novo.classList.add('estilo')
+            novo.innerHTML = `Novo ${$('main').first().children().length}`
+            $('main').first().prepend(novo)
+
+        })
+
+        $('button').last().click(()=>{
+            let novo = document.createElement('div')
+            novo.classList.add('estilo')
+            novo.innerHTML = `Novo ${$('main').first().children().length}`
+            $('main').append(novo)
+        })
+
+
+    </script>
+
+
+
+    
+</body>
+</html>
