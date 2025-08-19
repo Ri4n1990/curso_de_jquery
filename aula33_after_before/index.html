@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>prepend prependto</title>
+
+    <style>
+
+        .caixa{
+            background-color:  #bbb;
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .subcaixa{
+           
+            width: 100px;
+            height: 100px;
+            margin: 0px 0px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 'xx -large';
+
+
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <p>
+
+        <button id="btnadicionarantes">Adicionar antes</button>
+
+        <button id="btnadicionardepois">Adicionar depois</button>
+
+        <button id="btnadicionartextoantes">Adicionar texto antes</button>
+
+        <button id="btnadicionartextodepois">Adicionar texto depois</button>
+
+
+
+
+    </p>
+
+    <div class="caixa" id="caixa">
+        <div class="subcaixa" style="background-color: rgb(255, 255, 255);">0</div>
+    </div>
+    <div id="caixa2" class="caixa">CFB cursos</div>
+
+    <script>
+        let r,g,b
+        
+        let num = 1
+        $('#btnadicionarantes').click(()=>{
+            r = Math.floor(Math.random()*225)
+            g = Math.floor(Math.random()*225)
+            b = Math.floor(Math.random()*225)
+            $('#caixa').before("<div class = 'subcaixa' style = 'background-color:rgb("+r+","+g+","+b+")'>"+num+"</div>")
+            num++
+        })
+
+        $('#btnadicionardepois').click(()=>{
+            
+
+                r = Math.floor(Math.random()*225)
+                g = Math.floor(Math.random()*225)
+                b = Math.floor(Math.random()*225)
+                $('#caixa').after("<div class = 'subcaixa' style = 'background-color:rgb("+r+","+g+","+b+")'>"+num+"</div>")
+            num++
+
+               
+            
+        })
+
+
+        $('#btnadicionartextoantes').click(()=>{
+            $('#caixa2').prepend('Curso de jquery antes')
+        })
+
+        $('#btnadicionartextodepois').click(()=>{
+            $('#caixa2').append('Curso de jquery depois')
+            
+        })
+
+    </script>
+
+    
+</body>
+
+</html>
