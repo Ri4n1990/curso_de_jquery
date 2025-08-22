@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jquery.js"></script>
+
+    <style>
+
+        .caixa{
+            background-color:  #bbb;
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        .subcaixa{
+           
+            width: 100px;
+            height: 100px;
+            margin: 0px 0px 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 'xx -large';
+
+
+        }
+
+
+
+
+
+    </style>
+    <title>maipulandopropriedades css</title>
+</head>
+<body>
+
+
+    <p>
+
+        <button id="btnverde">Verde</button>
+        <button id="btnvermelho">Vermelho</button>
+        <button id="btnazul">Azul</button>
+
+    </p>
+
+    <div id="caixa" class="caixa">
+        <div id="d0" class="subcaixa" style="background-color: rgb(255, 255, 255);">0</div>
+    </div>
+
+
+    <script>
+        let r,g,b
+
+        let num = 1
+        $('#btnvermelho').click(()=>{
+            $('#caixa').css({"background-color":"#f00", "color":"#0ff"})
+            alert($('#caixa').css("background-color"))
+            
+        })
+
+
+        $('#btnverde').click(()=>{
+            $('#caixa').css({"background-color":"#0f0", "color":"#f0f"})
+            
+            
+            
+        })
+
+        $('#btnazul').click(()=>{
+            $('#caixa').css({"background-color":"#00f", "color":"#ff0"})
+            
+            
+        })
+    </script>
+    
+</body>
+</html>
