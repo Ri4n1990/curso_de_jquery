@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Manipulação de classes</title>
+
+    <style>
+
+        main{
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 35vw;
+            height: 300px;
+            padding: 5px;
+
+
+        }
+
+        main>div{
+            width: 150px;
+            height: 150px;
+            background-color: lightcoral;
+            border: 2px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: x-large;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+
+        .selecionado{
+            background-color: lightblue;
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <div>Num1</div>
+        <div>Num2</div>
+        <div>Num3</div>
+        <div>Num4</div>
+
+    </main>
+
+
+
+    <script>
+
+        $('main>div').click(function(){
+            $(this).toggleClass('selecionado')
+
+        })
+    </script>
+    
+</body>
+</html>
