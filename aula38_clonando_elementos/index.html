@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clonando elementos</title>
+    <script src="../jquery.js"></script>
+    <style>
+
+        .caixa{
+            background-color: #ddd;
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px 0px 0px 0px;
+            display: flex;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <p>
+        <button id="btnclonar">Clonar</button>
+    </p>
+    
+    <div id="caixa" class="caixa">
+        <h2>Cfb cursos Curso de jquery</h2>
+    </div>
+
+    <div id="repositorio">
+
+    </div>
+
+
+    <script>
+        $('#btnclonar').click(()=>{
+            $('#caixa').clone().appendTo($('#repositorio'))
+        })
+    </script>
+</body>
+</html>

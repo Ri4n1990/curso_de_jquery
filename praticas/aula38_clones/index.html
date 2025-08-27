@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clonando</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+
+        #sono{
+            background-color: lightblue;
+            border: 2px solid black;
+            display: flex;
+            flex-flow:  row wrap;
+            width: 300px;
+            min-height: 300px;
+            margin: auto;
+            margin-top: 50px;
+
+        }
+
+         #elementin{
+            background-color: rgb(221, 71, 7);
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+           
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="elementin"></div>
+    <div id="sono"></div>
+
+    <button>Clonar bolinha</button>
+
+
+    <script>
+
+        $('button').first().click(()=>{
+            $('#elementin').clone().appendTo($('#sono'))
+        })
+    </script>
+
+
+    
+</body>
+</html>
