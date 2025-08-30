@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Detach</title>
+
+    <style>
+        .caixa{
+            background-color: #ddd;
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .item{
+            border-radius: 10px;
+            display: flex;
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+            color: #fff;
+            font-size: large;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cor1{
+            background-color: #800;
+
+        }
+        .cor2{
+            background-color: #080;
+
+        }
+        .cor3{
+            background-color: #008;
+
+        }
+        .cor4{
+            background-color: #880;
+
+        }
+        .cor5{
+            background-color: #088;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <p>
+        <button id="btnreset">Reset</button>
+        <button id="btnmudar">Mudar</button>
+    </p>
+
+
+    <div id="caixa1" class="caixa">
+        <div id="item1" class="item cor1">1</div>
+        <div id="item2" class="item cor2">2</div>
+        <div id="item3" class="item cor3">3</div>
+        <div id="item4" class="item cor4">4</div>
+        <div id="item5" class="item cor5">5</div>
+    </div>
+
+    <div id="caixa2" class="caixa"></div>
+
+
+    <script>
+
+        let items = $('.item')
+        let i = 0
+        
+
+        $('#btnmudar').click(()=>{
+            let item = $(items[i]).detach()
+            i++
+            $('#caixa2').append(item)
+        })
+
+        $('#btnreset').click(()=>{
+            for(let i = 0; i< items.length; i++){
+                let item = $(items[i]).detach()
+                $('#caixa1').append(item)
+            }
+            i = 0
+        })
+
+    </script>
+
+    
+</body>
+</html>
