@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>offseat</title>
+    <title>removeattr e removeclass</title>
     <script src="../jquery.js"></script>
 
     <style>
@@ -22,6 +22,11 @@
             margin-right: 10px;
         }
 
+        .borda{
+            border:2px solid black;
+            border-radius: 10px;
+        }
+
 
 
 
@@ -30,7 +35,12 @@
 
 <body>
 
-    <p><button id="btnposicao">Posição</button>
+    <p>
+        <button id="btnposicao">Posição</button>
+        <button id="btnremoverattr">Remover attr</button>
+        <button id="btnremoverclass">Remover class</button>
+        <button id="btnaddclass">Adicionar class</button>
+
         <br>
         <label for="top">Topo:</label>
         <input type="range" name="top" id="top" min="0" max="500">
@@ -44,6 +54,19 @@
 
     <div id="caixa" class="caixa" style="position: absolute;top: 100px; left: 100px; background-color: #f00;"></div>
     <script>
+
+        $('#btnremoverattr').click(()=>{
+            $('#caixa').removeAttr('style')
+        })
+        $('#btnremoverclass').click(()=>{
+            $('#caixa').removeClass('borda')
+        })
+
+        $('#btnaddclass').click(()=>{
+            $('#caixa').addClass('borda')
+        })
+
+
 
         $('#btnposicao').click(()=>{
             let pt = $('#caixa').position().top
