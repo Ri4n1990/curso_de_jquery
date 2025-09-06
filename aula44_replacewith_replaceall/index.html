@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replacewith e replaceall</title>
+    <script src="../jquery.js"></script>
+
+    <style>
+        .cor{
+            color: #f00;
+        }
+
+        .menu{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <button id="btn_replace1">replace All 1</button>
+        <button id="btn_replace2">replace All 2</button>
+        <button id="btn_replace3">replace 3</button>
+        <button id="btn_replace4">replace 4</button>
+    </div>
+
+    <div>
+        <h1 class="cor">CFB cursos</h1>
+        <h1 class="cor">Curso de jquery</h1>
+        <h2 class="cor">replace with 1</h2>
+        <h3 class="cor">Replace With 2</h3>
+    </div>
+
+    <script>
+
+        $('#btn_replace1').click((e)=>{
+
+            $('<p>trocado</p>').replaceAll(".cor")
+
+
+        })
+        $('#btn_replace2').click((e)=>{
+
+            $(`<div>${$(e.currentTarget).text()}</div>`).replaceAll(e.target)
+
+
+            })
+
+        $('#btn_replace3').click((e)=>{
+
+        $('.cor').replaceWith('<p>trocado</p>')
+
+
+        })
+
+        $('#btn_replace4').click((e)=>{
+
+        $(e.target).replaceWith($(`<div>${$(e.currentTarget).text()}</div>`))
+
+
+        })
+
+    </script>
+    
+</body>
+</html>

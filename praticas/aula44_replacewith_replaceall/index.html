@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Replaces</title>
+
+    <style>
+        #bloco{
+            width: 400px;
+            height: 400px;
+            background-color: lightcoral;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: auto;
+
+        }
+
+        .circulo{
+            width: 400px;
+            height: 400px;
+            background-color: lightblue;
+            border-radius: 50%;
+            border: 2px solid black;
+            margin: auto;
+
+        }
+
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <main id="bloco"></main>
+
+    <p>
+        <button id="btn_troca">Mudar</button>
+        <button id="btn_volta">Volta</button>
+    </p>
+
+    <script>
+
+        $('#btn_troca').click(()=>{
+
+            $('#bloco').replaceWith('<div class = "circulo"></div>')
+
+        })
+
+        $('#btn_volta').on("click", ()=>{
+            $('<div id = "bloco"></div>').replaceAll($('.circulo'))
+        })
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

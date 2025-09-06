@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolltop e scrollleft</title>
+    <script src="../jquery.js"></script>
+
+</head>
+
+<body>
+
+    <div class="menu">
+        <button id="bt_rolar_left">Rolar left</button>
+        <button id="bt_rolar_top">Rolar top</button>
+        <button id="bt_pos_left">Posição left</button>
+        <button id="bt_pos_top">Posição top</button>
+        <button id="bt_reset_pos">Resetar posição</button>
+    </div>
+
+    <div id="texto" style="border: 1px solid #000; width: 100px; height: 150px; overflow: auto;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas culpa doloremque nemo. Nemo, ad veritatis! Magnam ratione itaque minima eius inventore vero ex nihil consequatur, voluptatem ab eaque fugiat molestias.
+        Doloremque pariatur quam, obcaecati atque architecto, fugiat voluptatum cumque temporibus ullam assumenda explicabo rerum iure laudantium repellendus magni doloribus. Quod vitae consequatur debitis iste, sapiente nisi aliquid quo quam laborum.
+        Illum harum vitae atque quis voluptatum tempore alias consectetur laborum perferendis. Libero quibusdam, sequi adipisci minima molestiae, natus odio possimus a temporibus rem ratione doloribus necessitatibus voluptatibus maxime deserunt et?
+        Velit officiis est officia eius architecto exercitationem iure aliquam doloremque quibusdam accusantium, quisquam cupiditate voluptatum aperiam. Sed vel aspernatur minus mollitia incidunt ipsum, dolor corporis modi alias enim eveniet perferendis.
+        Minus doloremque cupiditate obcaecati atque natus, a officiis corrupti, ipsa quaerat minima voluptates dolore est tempora cumque optio aspernatur fugit delectus corporis maxime consectetur aut vitae inventore quis dolores! Voluptas?
+        
+    </div>
+
+    <script>
+
+        $('#bt_rolar_left').click(()=>{
+            $('#texto').scrollLeft(15)
+        })
+
+        $('#bt_rolar_top').click(()=>{
+            $('#texto').scrollTop(150)
+        })
+
+        $('#bt_pos_left').click(()=>{
+            alert($('#texto').scrollLeft())
+        })
+
+        $('#bt_pos_top').click(()=>{
+            alert($('#texto').scrollTop())
+        })
+
+        $('#bt_reset_pos').click(()=>{
+            $('#texto').scrollLeft(0).scrollTop(0)
+        })
+
+
+
+    </script>    
+</body>
+</html>
