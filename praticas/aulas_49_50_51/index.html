@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index noconflict length</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+    <div id="d1">dd1</div>
+    <div id="d2">dd2</div>
+    <div id="d3">dd3</div>
+    <div id="d4">dd4</div>
+    <div id="d5">dd5</div>
+
+    <button>Tamanho 'array'</button>
+
+
+    <script>
+
+        let bosta = $.noConflict()
+
+        bosta('div').on('click',(e)=>{
+            alert(bosta(e.currentTarget).index())
+
+        })
+
+        bosta('button').first().click(()=>{
+            alert(bosta('div').length)
+        })
+
+        bosta('div').each(function(e){
+            console.log(bosta(this).text())
+
+        })
+    </script>
+
+    
+</body>
+</html>
