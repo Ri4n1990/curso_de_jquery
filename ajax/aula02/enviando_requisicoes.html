@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enviando requisições</title>
+
+</head>
+
+<body>
+
+
+
+    <script>
+
+        var xhttp;
+
+        if(window.XMLHttpRequest){
+            xhttp = new XMLHttpRequest()
+
+        }else if(window.ActiveXObject){
+            xhttp = new ActiveXObject('Microsoft.XMLHTTP')
+        }
+
+        xhttp.onreadystatechange = ()=>{
+            // tratamento de resposta
+        }
+
+        let url = 'http://dominio.com/app'
+
+        xhttp.open('POST',url)
+        xhttp.setRequestHeader('Content-Type', 'application/json')
+
+        let dados = JSON.stringify({nome:'eu', idade : '129'})
+
+        xhttp.send(dados)
+
+        
+
+
+
+
+        
+
+    </script>
+    
+</body>
+
+
+
+
+</html>
