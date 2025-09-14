@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Tratando respostas com AJAX</title>
+
+    <style>
+
+        button{
+            background-color: lightblue;
+            border: 2px solid #000 ;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+
+        }
+
+        button:hover{
+            cursor: grab;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="get">GET</button>
+    <button id="post">POST</button>
+    <button id="put">PUT</button>
+    <button id="delete">DELETE</button>
+
+
+    <script>
+
+        
+
+        let xhttp;
+
+        if(window.XMLHttpRequest){
+            xhttp = new XMLHttpRequest()
+
+        }else if(window.ActiveXObject){
+            xhttp = new ActiveXObject('Microsoft.XMLHTTP')
+        }
+
+        $('#get').click(()=>{
+            
+
+            let endpoint = 'http://127.0.0.1:3080/mensagem'
+
+            xhttp.onreadystatechange = ()=>{
+
+                if(xhttp.readyState === 4){
+                    console.log('legal')
+                    if(xhttp.status == 200){
+
+                        let dados = JSON.parse(xhttp.responseText)
+                        alert(`os dados chegaram ${dados.mensagem}`)
+
+                    }else{
+
+                        alert('algo saiu errado!')
+                    }
+                }
+            }
+
+            xhttp.open('GET', endpoint)
+            xhttp.send(null)
+
+
+
+        })
+
+        $('#post').click(()=>{
+
+            let endpoint = 'http://127.0.0.1:3080/cadastrar'
+
+            let dados = JSON.stringify({nome : 'carla' , sobrenome : 'graça'})
+
+            xhttp.onreadystatechange = ()=>{
+
+                if(xhttp.readyState === 4){
+                    if(xhttp.status == 201){
+                        let resposta  = JSON.parse(xhttp.responseText)
+                        alert(`Tudo certo: ${resposta.msg}`)
+                    }else{
+                        alert('Algo saiu errado!')
+                    }
+                }
+
+            }
+
+            
+
+            xhttp.open("POST", endpoint)
+            xhttp.setRequestHeader("Content-Type" , "application/json")
+            
+            xhttp.send(dados)
+            
+        })
+
+        $('#put').click(()=>{
+
+            let endpoint = 'http://127.0.0.1:3080/atualizar'
+
+            let dados = JSON.stringify({nome:'bolinha' , sobrenome : ' quadradinha'})
+
+            xhttp.onreadystatechange = ()=>{
+                if(xhttp.readyState === 4){
+                    if(xhttp.status == 201){
+                        let resp = JSON.parse(xhttp.responseText)
+                        alert('cliente atualizado com sucesso !' , resp.msg )
+
+                    }else{
+
+                        alert( 'Algo saiu errado!')
+                    }
+                }
+                
+            }
+
+            xhttp.open('PUT', endpoint)
+            xhttp.setRequestHeader('Content-Type' , "application/json")
+            xhttp.send(dados)
+
+            
+            
+        })
+
+        $('#delete').click(()=>{
+
+            let endpoint = 'http://127.0.0.1:3080/deletar'
+
+            let dados = JSON.stringify({id : 3})
+
+            xhttp.onreadystatechange = ()=>{
+                if(xhttp.readyState === 4){
+                    if(xhttp.status == 204){
+                        
+                        alert('cliente Deletado com sucesso!')
+                    }else{
+                        alert('algo saiu errado!')
+                    }
+                }
+            }
+
+            xhttp.open("DELETE", endpoint)
+
+            xhttp.setRequestHeader('Content-Type',  "application/json")
+
+            xhttp.send(dados)
+            
+        })
+
+        
+
+
+        
+        
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
