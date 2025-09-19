@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <title>Requisicoes com jquery</title>
+
+
+</head>
+
+<body>
+
+    <button id="req">Fazer requisição</button>
+    <button id="post">POST</button>
+    <button id="put">PUT</button>
+
+    <script>
+
+        $('#req').click(()=>{
+
+            $.ajax({
+                url: 'https://viacep.com.br/ws/91783052/json/',
+                type: 'GET',
+
+            }).done((data, status, xhr)=>{
+                
+                alert(data.cep)
+
+            }).fail((xhr , status, error)=>{
+                alert('erro ao realizar a requisição!')
+
+            }).always((dataxhr, status, erro)=>{
+                alert('isso sempre aparece')
+            })
+
+
+        })
+
+
+        $('#post').click(()=>{
+            $.ajax({
+                url : '/cliente',
+                type : "POST",
+                contentType : 'application/json',
+                data: JSON.stringify({id : 2, nome: 'lufão'})
+            
+
+
+            }).done((data, status, xhr)=>{
+
+                alert(`requisição feita eae ${data.nome}`)
+
+            }).fail((xhr, status, erro)=>{
+
+                alert('Erro ao tentar fazer requisição!')
+
+            })
+            
+        })
+
+        $('#put').click(()=>{
+            $.ajax({
+                url: '/cliente',
+                type: 'PUT',
+                contentType : 'application/json',
+                data: JSON.stringify({nome:'polão', idade : 23}),
+                statusCode:{
+                200 :(data)=>{
+                    alert(`tudo certo eae ${data.nome}`)
+
+
+                },
+                500 : (erro)=>{
+                    alert('deu ruim')
+
+                }
+
+                }
+
+
+
+
+            })
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+
+
+
+
+
+
+</html>
